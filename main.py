@@ -90,7 +90,7 @@ if not st.session_state["logged_in"]:
         st.markdown("---")
         st.markdown("""
             <div style='text-align: center; color: #666;'>
-                <small>Admin Login: MdNasir / Password: 125Nasir</small>
+                <small>Admin Login: ME / Password: Something</small>
             </div>
             """, unsafe_allow_html=True)
 
