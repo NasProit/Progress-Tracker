@@ -257,27 +257,75 @@ else:
         # Progress Tracking
         progress_data = data_manager.get_all_progress()
         if progress_data:
-            tab1, tab2, tab3 = st.tabs(["📊 Progress Chart", "📈 Average Progress", "📋 Detailed View"])
+            st.markdown("""
+                <div style='background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin: 20px 0;'>
+                    <h3 style='text-align: center; color: #1f77b4;'>Student Progress Dashboard</h3>
+                </div>
+                """, unsafe_allow_html=True)
+
+            tab1, tab2, tab3 = st.tabs(["📊 Combined Progress", "👤 Individual Progress", "📈 Analytics"])
 
             with tab1:
+                # Combined progress view
+                st.markdown("### Overall Progress Chart")
                 st.plotly_chart(create_progress_chart(progress_data), use_container_width=True)
 
-            with tab2:
+                st.markdown("### Average Progress by Student")
                 st.plotly_chart(create_average_progress_chart(progress_data), use_container_width=True)
 
-            with tab3:
-                for student, topics in progress_data.items():
-                    with st.expander(f"Student: {student}"):
-                        for topic, subtopics in topics.items():
+            with tab2:
+                # Individual student progress
+                st.markdown("### Individual Student Progress")
+                for student in progress_data.keys():
+                    with st.expander(f"📚 Student: {student}", expanded=False):
+                        student_data = {student: progress_data[student]}
+
+                        # Individual progress chart
+                        st.plotly_chart(create_progress_chart(student_data), use_container_width=True)
+
+                        # Detailed progress table
+                        st.markdown("#### Detailed Progress")
+                        for topic, subtopics in progress_data[student].items():
                             st.write(f"**{topic}**")
                             for subtopic, data in subtopics.items():
-                                col1, col2 = st.columns([3, 1])
+                                col1, col2, col3 = st.columns([3, 1, 1])
                                 with col1:
-                                    st.progress(data['progress'] / 100)
+                                    st.write(f"- {subtopic}")
                                 with col2:
+                                    st.progress(data['progress'] / 100)
+                                with col3:
                                     st.write(f"{data['progress']}%")
-                                st.write(f"Subtopic: {subtopic}")
                             st.divider()
+
+            with tab3:
+                # Analytics view
+                st.markdown("### Progress Analytics")
+
+                # Calculate completion statistics
+                total_students = len(progress_data)
+                topic_completion = {}
+
+                for student, topics in progress_data.items():
+                    for topic, subtopics in topics.items():
+                        if topic not in topic_completion:
+                            topic_completion[topic] = {"total": 0, "count": 0}
+
+                        topic_total = sum(data['progress'] for data in subtopics.values())
+                        topic_count = len(subtopics)
+
+                        topic_completion[topic]["total"] += topic_total
+                        topic_completion[topic]["count"] += topic_count
+
+                # Display topic-wise completion
+                st.markdown("#### Topic-wise Completion Rate")
+                for topic, data in topic_completion.items():
+                    avg_completion = data["total"] / (data["count"] * total_students) if data["count"] > 0 else 0
+                    st.write(f"**{topic}**")
+                    col1, col2 = st.columns([3, 1])
+                    with col1:
+                        st.progress(avg_completion / 100)
+                    with col2:
+                        st.write(f"{avg_completion:.1f}%")
         else:
             st.info("No progress data available yet")
 
