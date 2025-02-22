@@ -50,7 +50,7 @@ if os.path.exists("assets/logo.png"):
 # Main title with styling
 st.markdown("""
     <h1 style='text-align: center; color: #1f77b4;'>
-        📊 Data Science Progress Tracker
+        📊 Proitbridge Milestone Tracker
     </h1>
     """, unsafe_allow_html=True)
 

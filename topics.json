@@ -1,1 +1,71 @@
-{"topics": {"Python": ["Basic of Python "]}, "last_updated": "2025-02-22T05:07:44.098165"}
+{
+  "topics": {
+    "Python": [
+      "Basics of Python",
+      "Data Types and Structures",
+      "Control Flow (Loops and Conditional Statements)",
+      "Functions and Modules",
+      "File Handling",
+      "Exception Handling",
+      "Object-Oriented Programming (OOP)",
+      "Regular Expressions",
+      "Working with Libraries (NumPy, Pandas, Matplotlib, Seaborn, etc.)"
+    ],
+    "Statistics": [
+      "Descriptive Statistics",
+      "Inferential Statistics",
+      "Probability Distributions",
+      "Hypothesis Testing",
+      "Correlation and Covariance",
+      "Regression Analysis",
+      "ANOVA (Analysis of Variance)",
+      "Bayesian Statistics",
+      "Time Series Analysis"
+    ],
+    "Machine Learning": [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Model Evaluation",
+      "Feature Engineering",
+      "Hyperparameter Tuning"
+    ],
+    "Supervised Learning": [
+      "Regression",
+      "Linear Regression",
+      "Polynomial Regression",
+      "Logistic Regression",
+      "Classification",
+      "Decision Trees",
+      "Random Forest",
+      "Support Vector Machines (SVM)",
+      "K-Nearest Neighbors (KNN)",
+      "Naive Bayes"
+    ],
+    "Unsupervised Learning": [
+      "Clustering",
+      "K-Means Clustering",
+      "Hierarchical Clustering",
+      "DBSCAN",
+      "Dimensionality Reduction",
+      "PCA (Principal Component Analysis)",
+      "t-SNE"
+    ],
+    "Deep Learning": [
+      "Neural Networks Basics",
+      "Activation Functions",
+      "Backpropagation",
+      "CNN (Convolutional Neural Networks)",
+      "RNN (Recurrent Neural Networks)",
+      "Transformers"
+    ],
+    "Model Evaluation": [
+      "Confusion Matrix",
+      "Precision, Recall, F1-score",
+      "ROC-AUC Curve",
+      "Bias-Variance Tradeoff",
+      "Cross-Validation",
+      "Hyperparameter Tuning"
+    ]
+  },
+  "last_updated": "2025-02-22T05:50:00.000000"
+}
