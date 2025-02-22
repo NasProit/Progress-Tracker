@@ -12,15 +12,27 @@ class DataManager:
         self._initialize_storage()
 
     def _initialize_storage(self):
-        # Initialize users with admin credentials
+        # Initialize users with admin credentials for Nasir
         if not os.path.exists(self.users_file):
             with open(self.users_file, 'w') as f:
                 json.dump({
                     "Nasir": {
-                        "password": "a7e5f1e5b0e5e5f1e5b0e5e5f1e5b0e5",  # Hashed "125Nasir"
+                        "password": "8a5f32b3c46ef1d9f8b2e3f4a7c6d5b2",  # Hashed "125Nasir"
                         "role": "admin"
                     }
                 }, f)
+
+        # Ensure admin user exists even if file exists
+        else:
+            with open(self.users_file, 'r') as f:
+                users = json.load(f)
+            if "Nasir" not in users:
+                users["Nasir"] = {
+                    "password": "8a5f32b3c46ef1d9f8b2e3f4a7c6d5b2",  # Hashed "125Nasir"
+                    "role": "admin"
+                }
+                with open(self.users_file, 'w') as f:
+                    json.dump(users, f)
 
         if not os.path.exists(self.progress_file):
             with open(self.progress_file, 'w') as f:

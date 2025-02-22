@@ -6,28 +6,46 @@ class Auth:
         self.data_manager = data_manager
 
     def hash_password(self, password):
-        return hashlib.sha256(password.encode()).hexdigest()
+        """Hash password using SHA-256"""
+        return hashlib.sha256(str(password).encode()).hexdigest()
 
     def login(self, username, password, role="student"):
+        """
+        Authenticate user with username, password and role
+        """
+        if not username or not password:
+            return False
+
         user = self.data_manager.get_user(username)
-        if user and user["password"] == self.hash_password(password):
+        hashed_password = self.hash_password(password)
+
+        if user and user["password"] == hashed_password:
             if role == "admin" and user["role"] != "admin":
                 return False
             if role == "student" and user["role"] == "admin":
                 return False
+
             st.session_state["logged_in"] = True
             st.session_state["username"] = username
             st.session_state["role"] = user["role"]
+            st.session_state["authentication_status"] = True
             return True
         return False
 
     def register(self, username, password):
+        """Register a new student user"""
+        if not username or not password:
+            return False
+
         if self.data_manager.get_user(username):
             return False
+
         self.data_manager.save_user(username, self.hash_password(password), "student")
         return True
 
     def logout(self):
-        for key in ["logged_in", "username", "role", "authentication_status"]:
+        """Clear all authentication related session state"""
+        keys_to_clear = ["logged_in", "username", "role", "authentication_status"]
+        for key in keys_to_clear:
             if key in st.session_state:
                 del st.session_state[key]
