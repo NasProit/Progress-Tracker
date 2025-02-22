@@ -8,9 +8,13 @@ class Auth:
     def hash_password(self, password):
         return hashlib.sha256(password.encode()).hexdigest()
 
-    def login(self, username, password):
+    def login(self, username, password, role="student"):
         user = self.data_manager.get_user(username)
         if user and user["password"] == self.hash_password(password):
+            if role == "admin" and user["role"] != "admin":
+                return False
+            if role == "student" and user["role"] == "admin":
+                return False
             st.session_state["logged_in"] = True
             st.session_state["username"] = username
             st.session_state["role"] = user["role"]
@@ -20,10 +24,10 @@ class Auth:
     def register(self, username, password):
         if self.data_manager.get_user(username):
             return False
-        self.data_manager.save_user(username, self.hash_password(password))
+        self.data_manager.save_user(username, self.hash_password(password), "student")
         return True
 
     def logout(self):
-        st.session_state["logged_in"] = False
-        st.session_state["username"] = None
-        st.session_state["role"] = None
+        for key in ["logged_in", "username", "role", "authentication_status"]:
+            if key in st.session_state:
+                del st.session_state[key]
