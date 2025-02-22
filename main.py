@@ -147,50 +147,112 @@ else:
                 else:
                     st.error("Error saving logo")
 
-            # Topic Management
-            st.markdown("### Topic Management")
+        # Topic Management
+        st.markdown("""
+            <div style='background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+                <h3 style='text-align: center; color: #1f77b4;'>Topic Management</h3>
+            </div>
+            """, unsafe_allow_html=True)
 
-            # Add Topic
-            new_topic = st.text_input("Add New Topic")
-            if new_topic and st.button("Add Topic"):
-                if data_manager.add_topic(new_topic):
-                    st.success(f"Topic '{new_topic}' added successfully!")
-                    st.rerun()
+        # Topics section
+        col1, col2 = st.columns([1, 1])
+
+        with col1:
+            st.markdown("### 📚 Add New Topic")
+            new_topic = st.text_input("Topic Name (e.g., Python, SQL, ML)", key="new_topic")
+            new_topic_desc = st.text_area("Topic Description (optional)", key="topic_desc", height=100)
+
+            if st.button("➕ Add Topic", use_container_width=True):
+                if new_topic:
+                    if data_manager.add_topic(new_topic):
+                        st.success(f"Topic '{new_topic}' added successfully!")
+                        st.rerun()
+                    else:
+                        st.error("Topic already exists")
                 else:
-                    st.error("Topic already exists")
+                    st.warning("Please enter a topic name")
 
-            # Add Subtopic
+        with col2:
+            st.markdown("### 📖 Add Subtopics")
             topics = data_manager.get_topics()
             if topics:
-                selected_topic = st.selectbox("Select Topic for Subtopic", list(topics.keys()))
-                new_subtopic = st.text_input("Add New Subtopic")
-                if new_subtopic and st.button("Add Subtopic"):
-                    if data_manager.add_subtopic(selected_topic, new_subtopic):
-                        st.success(f"Subtopic '{new_subtopic}' added successfully!")
-                        st.rerun()
-                    else:
-                        st.error("Subtopic already exists")
+                selected_topic = st.selectbox("Select Topic", list(topics.keys()), key="topic_for_subtopic")
+                new_subtopic = st.text_input("Subtopic Name", key="new_subtopic")
+                subtopic_desc = st.text_area("Subtopic Description (optional)", key="subtopic_desc", height=100)
 
-            # Remove Topic/Subtopic
-            st.markdown("### Remove Topics/Subtopics")
-            remove_topic = st.selectbox("Select Topic to Remove", [""] + list(topics.keys()))
-            if remove_topic:
-                if st.button(f"Remove Topic: {remove_topic}"):
-                    if data_manager.remove_topic(remove_topic):
-                        st.success(f"Topic '{remove_topic}' removed successfully!")
-                        st.rerun()
-                    else:
-                        st.error("Error removing topic")
-
-                subtopics = topics.get(remove_topic, [])
-                if subtopics:
-                    remove_subtopic = st.selectbox("Select Subtopic to Remove", [""] + subtopics)
-                    if remove_subtopic and st.button(f"Remove Subtopic: {remove_subtopic}"):
-                        if data_manager.remove_subtopic(remove_topic, remove_subtopic):
-                            st.success(f"Subtopic '{remove_subtopic}' removed successfully!")
+                if st.button("➕ Add Subtopic", use_container_width=True):
+                    if new_subtopic:
+                        if data_manager.add_subtopic(selected_topic, new_subtopic):
+                            st.success(f"Subtopic '{new_subtopic}' added successfully!")
                             st.rerun()
                         else:
-                            st.error("Error removing subtopic")
+                            st.error("Subtopic already exists")
+                    else:
+                        st.warning("Please enter a subtopic name")
+
+        # Current Topics and Subtopics Overview
+        st.markdown("""
+            <div style='background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin: 20px 0;'>
+                <h3 style='text-align: center; color: #1f77b4;'>Current Curriculum Structure</h3>
+            </div>
+            """, unsafe_allow_html=True)
+
+        topics = data_manager.get_topics()
+        if topics:
+            for topic in topics:
+                with st.expander(f"📚 {topic}", expanded=True):
+                    st.markdown(f"**Topic: {topic}**")
+
+                    # Display subtopics in columns
+                    subtopics = topics[topic]
+                    if subtopics:
+                        cols = st.columns(3)
+                        for idx, subtopic in enumerate(subtopics):
+                            with cols[idx % 3]:
+                                st.markdown(f"- {subtopic}")
+                                if st.button(f"🗑 Remove", key=f"remove_{topic}_{subtopic}"):
+                                    if data_manager.remove_subtopic(topic, subtopic):
+                                        st.success(f"Removed subtopic: {subtopic}")
+                                        st.rerun()
+                    else:
+                        st.info("No subtopics added yet")
+
+                    if st.button(f"🗑 Remove Topic: {topic}", key=f"remove_topic_{topic}"):
+                        if data_manager.remove_topic(topic):
+                            st.success(f"Removed topic: {topic}")
+                            st.rerun()
+        else:
+            st.info("No topics added yet. Start by adding your first topic!")
+
+        # Example Topics Helper
+        with st.expander("📋 Example Topics for Data Science"):
+            st.markdown("""
+            ### Suggested Topics and Subtopics:
+
+            1. **Python Fundamentals**
+               - Variables and Data Types
+               - Control Flow
+               - Functions and Methods
+               - Object-Oriented Programming
+
+            2. **SQL & Databases**
+               - Basic SQL Queries
+               - Joins and Relationships
+               - Database Design
+               - Query Optimization
+
+            3. **Machine Learning**
+               - Supervised Learning
+               - Unsupervised Learning
+               - Model Evaluation
+               - Feature Engineering
+
+            4. **Deep Learning**
+               - Neural Networks Basics
+               - CNN
+               - RNN and LSTM
+               - Transfer Learning
+            """)
 
         # Progress Tracking
         progress_data = data_manager.get_all_progress()

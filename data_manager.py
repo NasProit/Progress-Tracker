@@ -66,6 +66,11 @@ class DataManager:
         return users.get(username)
 
     def add_topic(self, topic_name):
+        """Add a new topic to the curriculum"""
+        topic_name = topic_name.strip()
+        if not topic_name:
+            return False
+
         with open(self.topics_file, 'r') as f:
             data = json.load(f)
 
@@ -79,6 +84,12 @@ class DataManager:
         return False
 
     def add_subtopic(self, topic_name, subtopic_name):
+        """Add a new subtopic to an existing topic"""
+        topic_name = topic_name.strip()
+        subtopic_name = subtopic_name.strip()
+        if not topic_name or not subtopic_name:
+            return False
+
         with open(self.topics_file, 'r') as f:
             data = json.load(f)
 
@@ -87,11 +98,12 @@ class DataManager:
             data["last_updated"] = datetime.now().isoformat()
 
             with open(self.topics_file, 'w') as f:
-                json.dump(data, f)
+                json.dump(data, f, indent=2)
             return True
         return False
 
     def remove_topic(self, topic_name):
+        """Remove a topic and all its subtopics"""
         with open(self.topics_file, 'r') as f:
             data = json.load(f)
 
@@ -100,11 +112,12 @@ class DataManager:
             data["last_updated"] = datetime.now().isoformat()
 
             with open(self.topics_file, 'w') as f:
-                json.dump(data, f)
+                json.dump(data, f, indent=2)
             return True
         return False
 
     def remove_subtopic(self, topic_name, subtopic_name):
+        """Remove a specific subtopic from a topic"""
         with open(self.topics_file, 'r') as f:
             data = json.load(f)
 
@@ -113,7 +126,7 @@ class DataManager:
             data["last_updated"] = datetime.now().isoformat()
 
             with open(self.topics_file, 'w') as f:
-                json.dump(data, f)
+                json.dump(data, f, indent=2)
             return True
         return False
 
