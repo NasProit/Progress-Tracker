@@ -21,9 +21,15 @@ class Auth:
             st.error(f"User {username} not found")
             return False
 
-        hashed_password = self.hash_password(password)
+        hashed_input = self.hash_password(password)
+        stored_hash = user["password"]
 
-        if user["password"] == hashed_password:
+        # Debug information
+        print(f"Input Password: {password}")
+        print(f"Hashed Input: {hashed_input}")
+        print(f"Stored Hash: {stored_hash}")
+
+        if hashed_input == stored_hash:
             if role == "admin" and user["role"] != "admin":
                 st.error("You don't have admin privileges")
                 return False

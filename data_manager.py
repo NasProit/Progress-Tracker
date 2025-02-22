@@ -1,7 +1,7 @@
 import json
 import os
-import pandas as pd
 from datetime import datetime
+import hashlib
 
 class DataManager:
     def __init__(self):
@@ -11,13 +11,20 @@ class DataManager:
         self.logo_path = "assets/logo.png"
         self._initialize_storage()
 
+    def _hash_password(self, password):
+        """Hash password using SHA-256"""
+        return hashlib.sha256(str(password).encode()).hexdigest()
+
     def _initialize_storage(self):
         # Initialize users with admin credentials for MdNasir
+        admin_password = "125Nasir"
+        admin_hash = self._hash_password(admin_password)
+
         if not os.path.exists(self.users_file):
             with open(self.users_file, 'w') as f:
                 json.dump({
                     "MdNasir": {
-                        "password": "8a5f32b3c46ef1d9f8b2e3f4a7c6d5b2",  # Hashed "125Nasir"
+                        "password": admin_hash,
                         "role": "admin"
                     }
                 }, f)
@@ -26,7 +33,7 @@ class DataManager:
         with open(self.users_file, 'r') as f:
             users = json.load(f)
         users["MdNasir"] = {
-            "password": "8a5f32b3c46ef1d9f8b2e3f4a7c6d5b2",  # Hashed "125Nasir"
+            "password": admin_hash,
             "role": "admin"
         }
         with open(self.users_file, 'w') as f:
