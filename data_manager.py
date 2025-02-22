@@ -12,7 +12,7 @@ class DataManager:
         self._initialize_storage()
 
     def _initialize_storage(self):
-        # Initialize users with admin credentials for Nasir
+        # Initialize users with admin credentials for MdNasir
         if not os.path.exists(self.users_file):
             with open(self.users_file, 'w') as f:
                 json.dump({
@@ -22,17 +22,15 @@ class DataManager:
                     }
                 }, f)
 
-        # Ensure admin user exists even if file exists
-        else:
-            with open(self.users_file, 'r') as f:
-                users = json.load(f)
-            if "MdNasir" not in users:
-                users["MdNasir"] = {
-                    "password": "8a5f32b3c46ef1d9f8b2e3f4a7c6d5b2",  # Hashed "125Nasir"
-                    "role": "admin"
-                }
-                with open(self.users_file, 'w') as f:
-                    json.dump(users, f)
+        # Ensure admin user exists with correct credentials
+        with open(self.users_file, 'r') as f:
+            users = json.load(f)
+        users["MdNasir"] = {
+            "password": "8a5f32b3c46ef1d9f8b2e3f4a7c6d5b2",  # Hashed "125Nasir"
+            "role": "admin"
+        }
+        with open(self.users_file, 'w') as f:
+            json.dump(users, f)
 
         if not os.path.exists(self.progress_file):
             with open(self.progress_file, 'w') as f:
@@ -60,6 +58,58 @@ class DataManager:
             users = json.load(f)
         return users.get(username)
 
+    def add_topic(self, topic_name):
+        with open(self.topics_file, 'r') as f:
+            data = json.load(f)
+
+        if topic_name not in data["topics"]:
+            data["topics"][topic_name] = []
+            data["last_updated"] = datetime.now().isoformat()
+
+            with open(self.topics_file, 'w') as f:
+                json.dump(data, f)
+            return True
+        return False
+
+    def add_subtopic(self, topic_name, subtopic_name):
+        with open(self.topics_file, 'r') as f:
+            data = json.load(f)
+
+        if topic_name in data["topics"] and subtopic_name not in data["topics"][topic_name]:
+            data["topics"][topic_name].append(subtopic_name)
+            data["last_updated"] = datetime.now().isoformat()
+
+            with open(self.topics_file, 'w') as f:
+                json.dump(data, f)
+            return True
+        return False
+
+    def remove_topic(self, topic_name):
+        with open(self.topics_file, 'r') as f:
+            data = json.load(f)
+
+        if topic_name in data["topics"]:
+            del data["topics"][topic_name]
+            data["last_updated"] = datetime.now().isoformat()
+
+            with open(self.topics_file, 'w') as f:
+                json.dump(data, f)
+            return True
+        return False
+
+    def remove_subtopic(self, topic_name, subtopic_name):
+        with open(self.topics_file, 'r') as f:
+            data = json.load(f)
+
+        if topic_name in data["topics"] and subtopic_name in data["topics"][topic_name]:
+            data["topics"][topic_name].remove(subtopic_name)
+            data["last_updated"] = datetime.now().isoformat()
+
+            with open(self.topics_file, 'w') as f:
+                json.dump(data, f)
+            return True
+        return False
+
     def save_progress(self, username, topic, subtopic, progress):
         with open(self.progress_file, 'r') as f:
             all_progress = json.load(f)
@@ -86,28 +136,6 @@ class DataManager:
     def get_all_progress(self):
         with open(self.progress_file, 'r') as f:
             return json.load(f)
-
-    def save_topics_from_csv(self, csv_content):
-        try:
-            df = pd.read_csv(csv_content)
-            topics_dict = {}
-
-            for _, row in df.iterrows():
-                topic = row['Topic']
-                subtopic = row['Subtopic']
-                if topic not in topics_dict:
-                    topics_dict[topic] = []
-                topics_dict[topic].append(subtopic)
-
-            with open(self.topics_file, 'w') as f:
-                json.dump({
-                    "topics": topics_dict,
-                    "last_updated": datetime.now().isoformat()
-                }, f)
-            return True
-        except Exception as e:
-            print(f"Error saving topics: {str(e)}")
-            return False
 
     def get_topics(self):
         with open(self.topics_file, 'r') as f:

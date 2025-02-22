@@ -17,12 +17,18 @@ class Auth:
             return False
 
         user = self.data_manager.get_user(username)
+        if not user:
+            st.error(f"User {username} not found")
+            return False
+
         hashed_password = self.hash_password(password)
 
-        if user and user["password"] == hashed_password:
+        if user["password"] == hashed_password:
             if role == "admin" and user["role"] != "admin":
+                st.error("You don't have admin privileges")
                 return False
             if role == "student" and user["role"] == "admin":
+                st.error("Please use admin login for admin account")
                 return False
 
             st.session_state["logged_in"] = True
@@ -30,6 +36,8 @@ class Auth:
             st.session_state["role"] = user["role"]
             st.session_state["authentication_status"] = True
             return True
+
+        st.error("Invalid password")
         return False
 
     def register(self, username, password):

@@ -30,8 +30,6 @@ def login_callback():
             st.session_state["role"] = role
             st.session_state["authentication_status"] = True
             st.rerun()
-        else:
-            st.session_state["authentication_status"] = False
 
 def register_callback():
     username = st.session_state.get("register_username", "")
@@ -88,14 +86,11 @@ if not st.session_state["logged_in"]:
         if st.button("🔐 Login", key="login_button", use_container_width=True):
             login_callback()
 
-        if st.session_state.get("authentication_status") is False:
-            st.error("Invalid username/password or role")
-
         # Admin credentials hint
         st.markdown("---")
         st.markdown("""
             <div style='text-align: center; color: #666;'>
-                <small>Admin Login: MdNasir</small>
+                <small>Admin Login: MdNasir / Password: 125Nasir</small>
             </div>
             """, unsafe_allow_html=True)
 
@@ -152,24 +147,50 @@ else:
                 else:
                     st.error("Error saving logo")
 
-            # CSV Upload for Topics
-            st.markdown("### Upload Topics CSV")
-            st.markdown("""
-                CSV should have columns: 'Topic', 'Subtopic'
-                Example:
-                ```
-                Topic,Subtopic
-                Python Basics,Variables and Data Types
-                Python Basics,Control Flow
-                Data Analysis,Pandas Basics
-                ```
-            """)
-            csv_file = st.file_uploader("Upload Topics CSV", type=['csv'])
-            if csv_file and st.button("Update Topics"):
-                if data_manager.save_topics_from_csv(csv_file):
-                    st.success("Topics updated successfully!")
+            # Topic Management
+            st.markdown("### Topic Management")
+
+            # Add Topic
+            new_topic = st.text_input("Add New Topic")
+            if new_topic and st.button("Add Topic"):
+                if data_manager.add_topic(new_topic):
+                    st.success(f"Topic '{new_topic}' added successfully!")
+                    st.rerun()
                 else:
-                    st.error("Error updating topics")
+                    st.error("Topic already exists")
+
+            # Add Subtopic
+            topics = data_manager.get_topics()
+            if topics:
+                selected_topic = st.selectbox("Select Topic for Subtopic", list(topics.keys()))
+                new_subtopic = st.text_input("Add New Subtopic")
+                if new_subtopic and st.button("Add Subtopic"):
+                    if data_manager.add_subtopic(selected_topic, new_subtopic):
+                        st.success(f"Subtopic '{new_subtopic}' added successfully!")
+                        st.rerun()
+                    else:
+                        st.error("Subtopic already exists")
+
+            # Remove Topic/Subtopic
+            st.markdown("### Remove Topics/Subtopics")
+            remove_topic = st.selectbox("Select Topic to Remove", [""] + list(topics.keys()))
+            if remove_topic:
+                if st.button(f"Remove Topic: {remove_topic}"):
+                    if data_manager.remove_topic(remove_topic):
+                        st.success(f"Topic '{remove_topic}' removed successfully!")
+                        st.rerun()
+                    else:
+                        st.error("Error removing topic")
+
+                subtopics = topics.get(remove_topic, [])
+                if subtopics:
+                    remove_subtopic = st.selectbox("Select Subtopic to Remove", [""] + subtopics)
+                    if remove_subtopic and st.button(f"Remove Subtopic: {remove_subtopic}"):
+                        if data_manager.remove_subtopic(remove_topic, remove_subtopic):
+                            st.success(f"Subtopic '{remove_subtopic}' removed successfully!")
+                            st.rerun()
+                        else:
+                            st.error("Error removing subtopic")
 
         # Progress Tracking
         progress_data = data_manager.get_all_progress()
@@ -209,7 +230,7 @@ else:
         # Topic and Subtopic selection
         topics = data_manager.get_topics()
         if not topics:
-            st.warning("No topics available. Please wait for the admin to upload the curriculum.")
+            st.warning("No topics available. Please wait for the admin to add the curriculum.")
         else:
             col1, col2, col3 = st.columns([2, 2, 1])
 
