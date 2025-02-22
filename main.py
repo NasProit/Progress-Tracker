@@ -1,8 +1,10 @@
 import streamlit as st
+import pandas as pd
 from auth import Auth
 from data_manager import DataManager
 from visualization import create_progress_chart, create_average_progress_chart
 from styles import apply_custom_styles
+import os
 
 # Initialize
 data_manager = DataManager()
@@ -40,10 +42,14 @@ def register_callback():
         else:
             st.session_state["register_status"] = "error"
 
+# Display logo if exists
+if os.path.exists("assets/logo.png"):
+    st.image("assets/logo.png", width=200)
+
 # Main title with styling
 st.markdown("""
     <h1 style='text-align: center; color: #1f77b4;'>
-        📚 Student Progress Tracker
+        📊 Data Science Progress Tracker
     </h1>
     """, unsafe_allow_html=True)
 
@@ -103,8 +109,38 @@ else:
             </div>
             """, unsafe_allow_html=True)
 
-        progress_data = data_manager.get_all_progress()
+        # Admin Settings
+        with st.expander("⚙️ Admin Settings"):
+            # Logo Upload
+            logo_file = st.file_uploader("Upload Logo (PNG format)", type=['png'])
+            if logo_file and st.button("Save Logo"):
+                if data_manager.save_logo(logo_file):
+                    st.success("Logo updated successfully!")
+                    st.rerun()
+                else:
+                    st.error("Error saving logo")
 
+            # CSV Upload for Topics
+            st.markdown("### Upload Topics CSV")
+            st.markdown("""
+                CSV should have columns: 'Topic', 'Subtopic'
+                Example:
+                ```
+                Topic,Subtopic
+                Python Basics,Variables and Data Types
+                Python Basics,Control Flow
+                Data Analysis,Pandas Basics
+                ```
+            """)
+            csv_file = st.file_uploader("Upload Topics CSV", type=['csv'])
+            if csv_file and st.button("Update Topics"):
+                if data_manager.save_topics_from_csv(csv_file):
+                    st.success("Topics updated successfully!")
+                else:
+                    st.error("Error updating topics")
+
+        # Progress Tracking
+        progress_data = data_manager.get_all_progress()
         if progress_data:
             tab1, tab2, tab3 = st.tabs(["📊 Progress Chart", "📈 Average Progress", "📋 Detailed View"])
 
@@ -115,16 +151,18 @@ else:
                 st.plotly_chart(create_average_progress_chart(progress_data), use_container_width=True)
 
             with tab3:
-                for student, courses in progress_data.items():
+                for student, topics in progress_data.items():
                     with st.expander(f"Student: {student}"):
-                        for course, data in courses.items():
-                            col1, col2 = st.columns([3, 1])
-                            with col1:
-                                st.progress(data['progress'] / 100)
-                            with col2:
-                                st.write(f"{data['progress']}%")
-                            st.write(f"Course: {course}")
-                        st.divider()
+                        for topic, subtopics in topics.items():
+                            st.write(f"**{topic}**")
+                            for subtopic, data in subtopics.items():
+                                col1, col2 = st.columns([3, 1])
+                                with col1:
+                                    st.progress(data['progress'] / 100)
+                                with col2:
+                                    st.write(f"{data['progress']}%")
+                                st.write(f"Subtopic: {subtopic}")
+                            st.divider()
         else:
             st.info("No progress data available yet")
 
@@ -136,45 +174,51 @@ else:
             </div>
             """, unsafe_allow_html=True)
 
-        # Course progress update
-        col1, col2 = st.columns([2, 1])
-
-        with col1:
-            course = st.selectbox(
-                "📚 Select Course",
-                ["Mathematics", "Science", "History", "English"]
-            )
-
-        with col2:
-            current_progress = data_manager.get_student_progress(
-                st.session_state["username"]).get(course, {}).get("progress", 0)
-            progress = st.slider(
-                "Update Progress",
-                0, 100,
-                value=int(current_progress)
-            )
-
-        if st.button("📝 Update Progress", use_container_width=True):
-            data_manager.save_progress(st.session_state["username"], course, progress)
-            st.success("Progress updated successfully!")
-
-        # Display current progress
-        st.markdown("""
-            <div style='background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin-top: 20px;'>
-                <h3 style='text-align: center; color: #1f77b4;'>Current Progress</h3>
-            </div>
-            """, unsafe_allow_html=True)
-
-        student_progress = data_manager.get_student_progress(st.session_state["username"])
-
-        if student_progress:
-            for course, data in student_progress.items():
-                col1, col2, col3 = st.columns([3, 1, 1])
-                with col1:
-                    st.progress(data['progress'] / 100)
-                with col2:
-                    st.write(f"{data['progress']}%")
-                with col3:
-                    st.write(course)
+        # Topic and Subtopic selection
+        topics = data_manager.get_topics()
+        if not topics:
+            st.warning("No topics available. Please wait for the admin to upload the curriculum.")
         else:
-            st.info("No progress recorded yet. Start by updating your first course!")
+            col1, col2, col3 = st.columns([2, 2, 1])
+
+            with col1:
+                topic = st.selectbox("📚 Select Topic", list(topics.keys()))
+
+            with col2:
+                subtopic = st.selectbox("📖 Select Subtopic", topics[topic])
+
+            with col3:
+                current_progress = data_manager.get_student_progress(
+                    st.session_state["username"]
+                ).get(topic, {}).get(subtopic, {}).get("progress", 0)
+                progress = st.slider(
+                    "Progress",
+                    0, 100,
+                    value=int(current_progress)
+                )
+
+            if st.button("📝 Update Progress", use_container_width=True):
+                data_manager.save_progress(st.session_state["username"], topic, subtopic, progress)
+                st.success("Progress updated successfully!")
+
+            # Display current progress
+            st.markdown("""
+                <div style='background-color: #f0f2f6; padding: 20px; border-radius: 10px; margin-top: 20px;'>
+                    <h3 style='text-align: center; color: #1f77b4;'>Current Progress</h3>
+                </div>
+                """, unsafe_allow_html=True)
+
+            student_progress = data_manager.get_student_progress(st.session_state["username"])
+            if student_progress:
+                for topic, subtopics in student_progress.items():
+                    st.write(f"**{topic}**")
+                    for subtopic, data in subtopics.items():
+                        col1, col2 = st.columns([4, 1])
+                        with col1:
+                            st.progress(data['progress'] / 100)
+                            st.write(f"Subtopic: {subtopic}")
+                        with col2:
+                            st.write(f"{data['progress']}%")
+                    st.divider()
+            else:
+                st.info("No progress recorded yet. Start by updating your first topic!")
