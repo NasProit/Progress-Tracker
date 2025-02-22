@@ -16,7 +16,7 @@ class DataManager:
         if not os.path.exists(self.users_file):
             with open(self.users_file, 'w') as f:
                 json.dump({
-                    "Nasir": {
+                    "MdNasir": {
                         "password": "8a5f32b3c46ef1d9f8b2e3f4a7c6d5b2",  # Hashed "125Nasir"
                         "role": "admin"
                     }
@@ -26,8 +26,8 @@ class DataManager:
         else:
             with open(self.users_file, 'r') as f:
                 users = json.load(f)
-            if "Nasir" not in users:
-                users["Nasir"] = {
+            if "MdNasir" not in users:
+                users["MdNasir"] = {
                     "password": "8a5f32b3c46ef1d9f8b2e3f4a7c6d5b2",  # Hashed "125Nasir"
                     "role": "admin"
                 }

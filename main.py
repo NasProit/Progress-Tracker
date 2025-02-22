@@ -17,6 +17,7 @@ if "logged_in" not in st.session_state:
     st.session_state["username"] = None
     st.session_state["role"] = None
     st.session_state["authentication_status"] = None
+    st.session_state["current_page"] = "login"
 
 def login_callback():
     username = st.session_state.get("login_username", "")
@@ -39,6 +40,8 @@ def register_callback():
     if username and password:
         if auth.register(username, password):
             st.session_state["register_status"] = "success"
+            st.session_state["current_page"] = "login"
+            st.rerun()
         else:
             st.session_state["register_status"] = "error"
 
@@ -55,9 +58,22 @@ st.markdown("""
 
 # Authentication section
 if not st.session_state["logged_in"]:
+    # Navigation buttons
     col1, col2 = st.columns([1, 1])
-
     with col1:
+        if st.button("Login Page", use_container_width=True, 
+                    type="primary" if st.session_state["current_page"] == "login" else "secondary"):
+            st.session_state["current_page"] = "login"
+            st.rerun()
+    with col2:
+        if st.button("Register Page", use_container_width=True,
+                    type="primary" if st.session_state["current_page"] == "register" else "secondary"):
+            st.session_state["current_page"] = "register"
+            st.rerun()
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    if st.session_state["current_page"] == "login":
         st.markdown("""
             <div style='background-color: #f0f2f6; padding: 20px; border-radius: 10px;'>
                 <h3 style='text-align: center; color: #1f77b4;'>Login</h3>
@@ -68,13 +84,22 @@ if not st.session_state["logged_in"]:
         password = st.text_input("Password", type="password", key="login_password")
         role = st.selectbox("Role", ["student", "admin"], key="login_role")
 
-        if st.button("Login", key="login_button", use_container_width=True):
+        st.markdown("<br>", unsafe_allow_html=True)
+        if st.button("🔐 Login", key="login_button", use_container_width=True):
             login_callback()
 
         if st.session_state.get("authentication_status") is False:
             st.error("Invalid username/password or role")
 
-    with col2:
+        # Admin credentials hint
+        st.markdown("---")
+        st.markdown("""
+            <div style='text-align: center; color: #666;'>
+                <small>Admin Login: MdNasir</small>
+            </div>
+            """, unsafe_allow_html=True)
+
+    else:  # Register page
         st.markdown("""
             <div style='background-color: #f0f2f6; padding: 20px; border-radius: 10px;'>
                 <h3 style='text-align: center; color: #1f77b4;'>Register (Students Only)</h3>
@@ -83,9 +108,16 @@ if not st.session_state["logged_in"]:
 
         username = st.text_input("Username", key="register_username")
         password = st.text_input("Password", type="password", key="register_password")
+        password_confirm = st.text_input("Confirm Password", type="password", key="register_password_confirm")
 
-        if st.button("Register", key="register_button", use_container_width=True):
-            register_callback()
+        st.markdown("<br>", unsafe_allow_html=True)
+        if st.button("📝 Register", key="register_button", use_container_width=True):
+            if password != password_confirm:
+                st.error("Passwords do not match!")
+            elif len(password) < 6:
+                st.error("Password must be at least 6 characters long!")
+            else:
+                register_callback()
 
         if st.session_state.get("register_status") == "success":
             st.success("Registration successful! Please login.")
