@@ -54,5 +54,9 @@
     "matheiw": {
         "password": "bd3e7541673ace69f932e366261ddf0295e0278ad9d83c66b9553b43b74837f4",
         "role": "student"
+    },
+    "Raj": {
+        "password": "80994a75705b9b46361a0def4c3b27c071dec6cbe11babeb20bc15e212c42acd",
+        "role": "student"
     }
 }

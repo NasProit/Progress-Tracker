@@ -7,20 +7,549 @@
                 "deadlines": [
                     "2025-03-14",
                     "2025-03-21"
-                ]
+                ],
+                "timestamp": "2025-03-12T12:02:39.606870"
             },
             "Data Analyst_Phase 4_SQL_Data Manipulation": {
                 "completion": 100,
                 "deadlines": [
                     "2025-03-25",
                     "2025-03-27"
-                ]
+                ],
+                "timestamp": "2025-03-12T12:02:39.613678"
+            },
+            "Data Analyst_Phase 1_Documents_Self Introduction": {
+                "completion": 45,
+                "deadlines": [
+                    "2025-03-13"
+                ],
+                "timestamp": "2025-03-12T11:50:10.478109"
+            },
+            "Data Analyst_Phase 1_Documents_Resume": {
+                "completion": 100,
+                "deadlines": [
+                    "2025-03-19"
+                ],
+                "timestamp": "2025-03-12T11:50:10.481387"
+            },
+            "Data Analyst_Phase 1_Documents_LinkedIn Portfolio": {
+                "completion": 0,
+                "deadlines": [
+                    "2025-03-25"
+                ],
+                "timestamp": "2025-03-12T11:50:10.485617"
+            },
+            "Data Analyst_Phase 1_Documents_Github Repository": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:50:10.488840"
+            },
+            "Data Analyst_Phase 2_Python_Basics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.377883"
+            },
+            "Data Analyst_Phase 2_Python_Control Flow": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.387191"
+            },
+            "Data Analyst_Phase 2_Python_Functions": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.392457"
+            },
+            "Data Analyst_Phase 2_Python_Data Structures": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.399316"
+            },
+            "Data Analyst_Phase 2_Python_File Handling": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.403346"
+            },
+            "Data Analyst_Phase 2_Python_Object-Oriented Programming (OOP)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.407594"
+            },
+            "Data Analyst_Phase 2_Python_Modules & Packages": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.410674"
+            },
+            "Data Analyst_Phase 2_Statistics_Basic Concepts": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.438879"
+            },
+            "Data Analyst_Phase 2_Statistics_Descriptive Statistics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.440446"
+            },
+            "Data Analyst_Phase 2_Statistics_Inferential Statistics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.444945"
+            },
+            "Data Analyst_Phase 2_Statistics_Probability": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.447432"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Regression Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.512696"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Classification Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.516693"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Ensemble Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.519838"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Instance-Based Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.521872"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Regularization & Feature Engineering": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.524630"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Clustering": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.526877"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Association Rule Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.530056"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Recommendation Systems": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.535948"
+            },
+            "Data Analyst_Phase 3_Machine Learning_Dimensionality Reduction": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.539081"
+            },
+            "Data Analyst_Phase 4_SQL_Basic SQL Commands": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.610222"
+            },
+            "Data Analyst_Phase 4_SQL_Joins and Relationships": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.615872"
+            },
+            "Data Analyst_Phase 4_SQL_Subqueries and Set Operators": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.618114"
+            },
+            "Data Analyst_Phase 4_SQL_Data Definition Language (DDL)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.621833"
+            },
+            "Data Analyst_Phase 4_SQL_Data Control Language (DCL)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.623991"
+            },
+            "Data Analyst_Phase 4_SQL_Window Functions": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.626569"
+            },
+            "Data Analyst_Phase 4_SQL_Advanced Topics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.628836"
+            },
+            "Data Analyst_Phase 5_Excel_Introduction to Excel": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.693855"
+            },
+            "Data Analyst_Phase 5_Excel_Basic Functions & Formulas": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.696270"
+            },
+            "Data Analyst_Phase 5_Excel_Data Formatting & Manipulation": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.699627"
+            },
+            "Data Analyst_Phase 5_Excel_Advanced Formulas & Functions": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.702617"
+            },
+            "Data Analyst_Phase 5_Excel_Data Analysis & Pivot Tables": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.707216"
+            },
+            "Data Analyst_Phase 5_Excel_Charts & Visualizations": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.711151"
+            },
+            "Data Analyst_Phase 5_Excel_Advanced Excel Functions": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.715574"
+            },
+            "Data Analyst_Phase 5_Excel_Power Query & Power Pivot": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.719657"
+            },
+            "Data Analyst_Phase 5_Excel_Excel Dashboards": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.723713"
+            },
+            "Data Analyst_Phase 6_PowerBI_Data Preparation & Transformation": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.803838"
+            },
+            "Data Analyst_Phase 6_PowerBI_Data Modeling": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.809368"
+            },
+            "Data Analyst_Phase 6_PowerBI_DAX (Data Analysis Expressions)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.811954"
+            },
+            "Data Analyst_Phase 6_PowerBI_Visualizations & Reports": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.813947"
+            },
+            "Data Analyst_Phase 6_PowerBI_Power BI Service & Publishing": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.816306"
+            },
+            "Data Analyst_Phase 1_Portfolio_Induction": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.279458"
+            },
+            "Data Analyst_Phase 1_Portfolio_Job Sheet": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.283202"
+            },
+            "Data Analyst_Phase 1_Portfolio_Naulkari Profile": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.286301"
+            },
+            "Data Analyst_Phase 1_Portfolio_Self Introduction": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.289645"
+            },
+            "Data Analyst_Phase 1_Portfolio_Resume": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.291959"
+            },
+            "Data Analyst_Phase 1_Portfolio_Cover Letter": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.295354"
+            },
+            "Data Analyst_Phase 1_Portfolio_LinkedIn Portfolio": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.297665"
+            },
+            "Data Analyst_Phase 1_Portfolio_Github Repository": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.299697"
+            },
+            "Data Analyst_Phase 1_Portfolio_Networking": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:39.303083"
+            },
+            "Data Analyst_Phase 1_Portfolio_Articles": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:56:41.667782"
             }
         }
     },
     "MdNasir": {
         "career_path": "Data Scientist",
-        "progress": {}
+        "progress": {
+            "Data Scientist_Phase 1_Documents_Self Introduction": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.063574"
+            },
+            "Data Scientist_Phase 1_Documents_Resume": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.066626"
+            },
+            "Data Scientist_Phase 1_Documents_LinkedIn Portfolio": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.069803"
+            },
+            "Data Scientist_Phase 1_Documents_GitHub Repo": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.071910"
+            },
+            "Data Scientist_Phase 2_Python_Basics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.152040"
+            },
+            "Data Scientist_Phase 2_Python_Control Flow": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.155461"
+            },
+            "Data Scientist_Phase 2_Python_Functions": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.159455"
+            },
+            "Data Scientist_Phase 2_Python_Data Structures": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.161481"
+            },
+            "Data Scientist_Phase 2_Python_File Handling": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.165031"
+            },
+            "Data Scientist_Phase 2_Python_Object-Oriented Programming (OOP)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.168051"
+            },
+            "Data Scientist_Phase 2_Python_Modules & Packages": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.171454"
+            },
+            "Data Scientist_Phase 2_Statistics_Basic Concepts": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.199892"
+            },
+            "Data Scientist_Phase 2_Statistics_Descriptive Statistics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.202881"
+            },
+            "Data Scientist_Phase 2_Statistics_Inferential Statistics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.205647"
+            },
+            "Data Scientist_Phase 2_Statistics_Probability": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.209083"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Regression Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.287124"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Classification Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.290386"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Ensemble Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.292938"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Instance-Based Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.296559"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Regularization & Feature Engineering": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.298617"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Clustering": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.300999"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Association Rule Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.304271"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Recommendation Systems": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.306923"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Dimensionality Reduction": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.309207"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Introduction to Deep Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.372838"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Core DL Concepts": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.372838"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Neural Networks": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.379757"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Convolutional Neural Networks (CNNs)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.381968"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Advanced CNN Architectures": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.385439"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Computer Vision with OpenCV": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.388723"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Object Detection": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.391053"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Autoencoders": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.394630"
+            },
+            "Data Scientist_Phase 4_NLP_Introduction to NLP": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.418126"
+            },
+            "Data Scientist_Phase 4_NLP_Word Embeddings": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.421581"
+            },
+            "Data Scientist_Phase 4_NLP_Recurrent Neural Networks (RNNs) & Variants": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.423958"
+            },
+            "Data Scientist_Phase 4_NLP_Text Classification & Sequence Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.426317"
+            },
+            "Data Scientist_Phase 4_NLP_Transformer Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.428726"
+            },
+            "Data Scientist_Phase 4_NLP_BERT (Bidirectional Encoder Representations from Transformers)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.432266"
+            },
+            "Data Scientist_Phase 4_NLP_Named Entity Recognition (NER)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.434849"
+            },
+            "Data Scientist_Phase 4_NLP_Project 1: Email Segregation": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.436896"
+            },
+            "Data Scientist_Phase 4_NLP_Project 2: Chatbot Development": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.439155"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Introduction to Time Series": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.532817"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Time Series Analysis": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.536112"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Time Series Forecasting": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.539646"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Time Series Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.543326"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Advanced Time Series Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.548969"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Model Evaluation & Metrics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.552359"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Time Series Data Preprocessing": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.555740"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Trend and Seasonality": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T11:59:38.559101"
+            }
+        }
     },
     "Jaga": {
         "career_path": "Data Scientist",
@@ -54,6 +583,460 @@
                     "2025-03-29"
                 ],
                 "timestamp": "2025-03-11T11:34:01.807302"
+            }
+        }
+    },
+    "Raj": {
+        "career_path": "Data Scientist",
+        "progress": {
+            "Data Scientist_Phase 1_Documents_Self Introduction": {
+                "completion": 0,
+                "deadlines": [
+                    "2025-03-20",
+                    "2025-03-28"
+                ],
+                "timestamp": "2025-03-12T12:02:52.804393"
+            },
+            "Data Scientist_Phase 1_Documents_Resume": {
+                "completion": 100,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:52.809278"
+            },
+            "Data Scientist_Phase 1_Documents_LinkedIn Portfolio": {
+                "completion": 100,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:52.812981"
+            },
+            "Data Scientist_Phase 1_Documents_GitHub Repo": {
+                "completion": 100,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:02:52.816470"
+            },
+            "Data Scientist_Phase 2_Python_Basics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.916854"
+            },
+            "Data Scientist_Phase 2_Python_Control Flow": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.919990"
+            },
+            "Data Scientist_Phase 2_Python_Functions": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.922234"
+            },
+            "Data Scientist_Phase 2_Python_Data Structures": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.925424"
+            },
+            "Data Scientist_Phase 2_Python_File Handling": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.928554"
+            },
+            "Data Scientist_Phase 2_Python_Object-Oriented Programming (OOP)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.930679"
+            },
+            "Data Scientist_Phase 2_Python_Modules & Packages": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.934319"
+            },
+            "Data Scientist_Phase 2_Statistics_Basic Concepts": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.961036"
+            },
+            "Data Scientist_Phase 2_Statistics_Descriptive Statistics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.961036"
+            },
+            "Data Scientist_Phase 2_Statistics_Inferential Statistics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.968001"
+            },
+            "Data Scientist_Phase 2_Statistics_Probability": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.970615"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Regression Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.045472"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Classification Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.047722"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Ensemble Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.049832"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Instance-Based Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.052945"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Regularization & Feature Engineering": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.054972"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Clustering": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.059147"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Association Rule Learning": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.061199"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Recommendation Systems": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.064552"
+            },
+            "Data Scientist_Phase 3_Machine Learning_Dimensionality Reduction": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.067353"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Introduction to Deep Learning": {
+                "completion": 100,
+                "deadlines": [
+                    "2025-03-20"
+                ],
+                "timestamp": "2025-03-12T12:13:10.135609"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Core DL Concepts": {
+                "completion": 100,
+                "deadlines": [
+                    "2025-03-27"
+                ],
+                "timestamp": "2025-03-12T12:13:10.141147"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Neural Networks": {
+                "completion": 100,
+                "deadlines": [
+                    "2025-03-19"
+                ],
+                "timestamp": "2025-03-12T12:13:10.146113"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Convolutional Neural Networks (CNNs)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.148512"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Advanced CNN Architectures": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.152351"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Computer Vision with OpenCV": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.154453"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Object Detection": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.157355"
+            },
+            "Data Scientist_Phase 4_Deep Learning_Autoencoders": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.159477"
+            },
+            "Data Scientist_Phase 4_NLP_Introduction to NLP": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.183291"
+            },
+            "Data Scientist_Phase 4_NLP_Word Embeddings": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.185236"
+            },
+            "Data Scientist_Phase 4_NLP_Recurrent Neural Networks (RNNs) & Variants": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.193001"
+            },
+            "Data Scientist_Phase 4_NLP_Text Classification & Sequence Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.198379"
+            },
+            "Data Scientist_Phase 4_NLP_Transformer Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.204005"
+            },
+            "Data Scientist_Phase 4_NLP_BERT (Bidirectional Encoder Representations from Transformers)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.206297"
+            },
+            "Data Scientist_Phase 4_NLP_Named Entity Recognition (NER)": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.209254"
+            },
+            "Data Scientist_Phase 4_NLP_Project 1: Email Segregation": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.211531"
+            },
+            "Data Scientist_Phase 4_NLP_Project 2: Chatbot Development": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.213791"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Introduction to Time Series": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.273603"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Time Series Analysis": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.280535"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Time Series Forecasting": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.283656"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Time Series Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.285805"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Advanced Time Series Models": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.287906"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Model Evaluation & Metrics": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.290236"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Time Series Data Preprocessing": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.293467"
+            },
+            "Data Scientist_Phase 5_Time Series Modeling (TSM)_Trend and Seasonality": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.294493"
+            },
+            "Data Scientist_Phase 1_Portfolio_Induction": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.824476"
+            },
+            "Data Scientist_Phase 1_Portfolio_Job Sheet": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.827354"
+            },
+            "Data Scientist_Phase 1_Portfolio_Naulkari Profile": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.831408"
+            },
+            "Data Scientist_Phase 1_Portfolio_Self Introduction": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.833632"
+            },
+            "Data Scientist_Phase 1_Portfolio_Resume": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.837090"
+            },
+            "Data Scientist_Phase 1_Portfolio_Cover Letter": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.839366"
+            },
+            "Data Scientist_Phase 1_Portfolio_LinkedIn Portfolio": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.840870"
+            },
+            "Data Scientist_Phase 1_Portfolio_Github Repository": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.842880"
+            },
+            "Data Scientist_Phase 1_Portfolio_Networking": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:09.847033"
+            },
+            "Data Scientist_Phase 6_Projects_Project-1": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.356837"
+            },
+            "Data Scientist_Phase 6_Projects_Project-2": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.360874"
+            },
+            "Data Scientist_Phase 6_Projects_Project-3": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.364365"
+            },
+            "Data Scientist_Phase 6_Projects_Project-4": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.366522"
+            },
+            "Data Scientist_Phase 6_Projects_Project-5": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.369511"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-1": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.435325"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-2": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.439513"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-3": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.442684"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-4": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.444907"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-5": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.448139"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-6": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.450133"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-7": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.452350"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-8": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.454394"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-9": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.457256"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-10": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.459594"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-11": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.463751"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-12": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.466351"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-13": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.468356"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-14": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.470466"
+            },
+            "Data Scientist_Phase 7_Articles_Articles-15": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.474211"
+            },
+            "Data Scientist_Phase 8_Articles_Mock interview-1": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:12:00.024041"
+            },
+            "Data Scientist_Phase 8_Articles_Mock interview-2": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:12:00.026250"
+            },
+            "Data Scientist_Phase 8_Articles_Mock interview-3": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:12:00.028817"
+            },
+            "Data Scientist_Phase 8_Articles_Mock interview-4": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:12:00.032220"
+            },
+            "Data Scientist_Phase 8_Articles_Mock interview-5": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:12:00.034472"
+            },
+            "Data Scientist_Phase 8_Mock interview_Mock interview-1": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.547902"
+            },
+            "Data Scientist_Phase 8_Mock interview_Mock interview-2": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.547902"
+            },
+            "Data Scientist_Phase 8_Mock interview_Mock interview-3": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.554678"
+            },
+            "Data Scientist_Phase 8_Mock interview_Mock interview-4": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.557225"
+            },
+            "Data Scientist_Phase 8_Mock interview_Mock interview-5": {
+                "completion": 0,
+                "deadlines": [],
+                "timestamp": "2025-03-12T12:13:10.559649"
             }
         }
     }

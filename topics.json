@@ -1,7 +1,7 @@
 {
     "Data Analyst": {
       "Phase 1": {
-        "Documents": ["Self Introduction", "Resume", "LinkedIn Portfolio", "Github Repository"]
+        "Portfolio": ["Induction", "Job Sheet","Naulkari Profile" , "Self Introduction", "Resume", "Cover Letter", "LinkedIn Portfolio", "Github Repository", "Networking","HackerRank"] 
       },
       "Phase 2": {
         "Python": [
@@ -38,11 +38,31 @@
           "Data Preparation & Transformation", "Data Modeling", "DAX (Data Analysis Expressions)",
           "Visualizations & Reports", "Power BI Service & Publishing"
         ]
+      },
+      "Phase 7": {
+        "Projects": [
+          "Project-1", "Project-2", "Project-3",
+          "Project-4", "Project-5"
+        ]
+      },
+      "Phase 8": {
+        "Articles": [
+          "Articles-1", "Articles-2", "Articles-3",
+          "Articles-4", "Articles-5","Articles-6", "Articles-7", "Articles-8",
+          "Articles-9", "Articles-10","Articles-11", "Articles-12", "Articles-13",
+          "Articles-14", "Articles-15"
+        ]
+      },
+      "Phase 9": {
+        "Mock interview": [
+          "Mock interview-1", "Mock interview-2", "Mock interview-3",
+          "Mock interview-4", "Mock interview-5"
+        ]
       }
     },
     "Data Scientist": {
       "Phase 1": {
-        "Documents": ["Self Introduction", "Resume", "LinkedIn Portfolio", "GitHub Repo"]
+        "Portfolio": ["Induction", "Job Sheet","Naulkari Profile" , "Self Introduction", "Resume", "Cover Letter", "LinkedIn Portfolio", "Github Repository", "Networking"]
       },
       "Phase 2": {
         "Python": [
@@ -78,6 +98,28 @@
           "Introduction to Time Series", "Time Series Analysis", "Time Series Forecasting",
           "Time Series Models", "Advanced Time Series Models", "Model Evaluation & Metrics",
           "Time Series Data Preprocessing", "Trend and Seasonality"
+        ]
+      },
+      "Phase 6": {
+        "Projects": [
+          "Project-1", "Project-2", "Project-3",
+          "Project-4", "Project-5"
+        ]
+      }
+      ,
+      "Phase 7": {
+        "Articles": [
+          "Articles-1", "Articles-2", "Articles-3",
+          "Articles-4", "Articles-5","Articles-6", "Articles-7", "Articles-8",
+          "Articles-9", "Articles-10","Articles-11", "Articles-12", "Articles-13",
+          "Articles-14", "Articles-15"
+        ]
+      }
+      ,
+      "Phase 8": {
+        "Mock interview": [
+          "Mock interview-1", "Mock interview-2", "Mock interview-3",
+          "Mock interview-4", "Mock interview-5"
         ]
       }
     }

@@ -4,7 +4,8 @@ address = '127.0.0.1'
 port = 8501
 
 [theme]
-primaryColor = "#2596be"
-backgroundColor = "#ffffff"
-secondaryBackgroundColor = "#f0f2f6"
-textColor = "#0b0039"
+primaryColor = "#2596be"  # ProITBridge Blue for interactive elements
+backgroundColor = "#ffffff"  # Clean white for clarity
+secondaryBackgroundColor = "#f0f2f6"  # Light grey-blue for smooth contrast
+textColor = "#0b0039"  # Deep navy for strong readability
+font = "sans-serif"  # Professional and modern font
