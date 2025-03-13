@@ -152,9 +152,49 @@ def render_subtopic_progress(subtopic, subtopic_key, subtopic_data, viewing_user
         st.markdown(f"**{subtopic}**")
 
     with col2:
-        percentage = st.slider("", 0, 100, subtopic_data.get("completion", 0), 
-                            key=f"{viewing_user}_{subtopic_key}",
-                            disabled=is_viewing_other)
+        # Replace the slider with a radio button group
+        status_options = ["Not Started", "In Progress", "Completed"]
+        
+        # Convert numerical completion to status
+        current_status = "Not Started"
+        completion = subtopic_data.get("completion", 0)
+        if completion == 100:
+            current_status = "Completed"
+        elif completion > 0:
+            current_status = "In Progress"
+        
+        # Add some CSS to fix the alignment
+        st.markdown(
+            """
+            <style>
+            div[data-testid="stHorizontalBlock"] div[data-testid="column"] div.row-widget.stRadio > div {
+                flex-direction: row;
+                align-items: center;
+            }
+            div[data-testid="stHorizontalBlock"] div[data-testid="column"] div.row-widget.stRadio > div > label {
+                padding: 0 10px;
+                white-space: nowrap;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+        
+        status = st.radio(
+            "",
+            options=status_options,
+            index=status_options.index(current_status),
+            key=f"{viewing_user}_{subtopic_key}_status",
+            disabled=is_viewing_other,
+            horizontal=True
+        )
+        
+        # Convert status back to percentage for compatibility with existing code
+        percentage = 0
+        if status == "In Progress":
+            percentage = 50
+        elif status == "Completed":
+            percentage = 100
 
     with col3:
         prev_dates = subtopic_data.get("deadlines", [])
@@ -197,10 +237,18 @@ def render_subtopic_progress(subtopic, subtopic_key, subtopic_data, viewing_user
 def visualize_topic_progress(topic_name, topic_progress):
     st.markdown("#### Topic Progress")
     
+    # Convert percentages to status labels for better visualization
+    status_mapping = {
+        0: "Not Started",
+        50: "In Progress",
+        100: "Completed"
+    }
+    
     # Create DataFrame for better visualization
     topic_df = pd.DataFrame({
         'Subtopic': list(topic_progress.keys()),
-        'Completion': list(topic_progress.values())
+        'Completion': list(topic_progress.values()),
+        'Status': [status_mapping.get(progress, "Unknown") for progress in topic_progress.values()]
     })
     
     fig_topic = px.bar(
@@ -208,9 +256,13 @@ def visualize_topic_progress(topic_name, topic_progress):
         x='Subtopic',
         y='Completion',
         title=f"{topic_name} Progress",
-        color='Completion',
-        color_continuous_scale='Blues',
-        labels={"Completion": "Completion (%)"}
+        color='Status',
+        color_discrete_map={
+            "Not Started": "#e0e0e0",
+            "In Progress": "#ffb74d",
+            "Completed": APP_THEME_COLOR
+        },
+        labels={"Completion": "Completion (%)", "Status": "Status"}
     )
     fig_topic.update_layout(height=300)
     st.plotly_chart(fig_topic, use_container_width=True)
