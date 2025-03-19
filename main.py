@@ -155,11 +155,19 @@ else:
         st.warning("This selection is permanent and cannot be changed later!")
 
         selected_track = st.selectbox("Choose a Track", ["Data Analyst", "Data Scientist"], index=None, placeholder="Select a Career Path")
+        # Add this new selection right after the career path selection
+        course_type = st.selectbox("Choose Course Type", [
+            "Full Data Science Course", 
+            "Full Data Analyst Course", 
+            "Mentorship for Data Science", 
+            "Mentorship for Data Analyst"
+        ], index=None, placeholder="Select Course Type")
 
-        if selected_track and st.button("Confirm Career Path Selection", type="primary"):
+        if selected_track and course_type and st.button("Confirm Career Path Selection", type="primary"):
             user_data[current_username]["career_path"] = selected_track
+            user_data[current_username]["course_type"] = course_type  # Store the course type
             save_json_data(user_data, USER_DATA_FILE)
-            st.success(f"You have selected {selected_track} as your career path")
+            st.success(f"You have selected {selected_track} ({course_type}) as your career path")
             st.rerun()
     else:
         # Get the career path
@@ -171,7 +179,17 @@ else:
         else:
             current_track = user_data[current_username].get("career_path")
 
-        st.markdown(f"## 🎓 {current_track} Career Path")
+       
+        # Right after this line: st.markdown(f"## 🎓 {current_track} Career Path")
+
+        # Get the course type
+        if is_viewing_other:
+            course_type = user_data[viewing_user].get("course_type", "Not specified")
+        else:
+            course_type = user_data[current_username].get("course_type", "Not specified")
+
+        # Display both career path and course type
+        st.markdown(f"## 🎓 {current_track} Career Path - {course_type}")
 
         # Get topics for the selected track
         topics_data = manager.get_topics(current_track)

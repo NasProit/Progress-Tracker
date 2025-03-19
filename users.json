@@ -2,9 +2,6 @@
     "MdNasir": {
         "password": "f555f39212782a6fde4c5494604697cf5644b33b2d1a1af8b29a70c3ddd4e88c",
         "role": "admin"
-    },
-    "Nas": {
-        "password": "76b8008030b59de5f202c204cad322097306d701af90dab33ec2c8156f9c6ad1",
-        "role": "student"
     }
+    
 }
