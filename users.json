@@ -1,62 +1,10 @@
 {
-    "admin": {
-        "password": "admin123",
-        "role": "admin"
-    },
-    "Nasir": {
-        "password": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
-        "role": "student"
-    },
     "MdNasir": {
         "password": "f555f39212782a6fde4c5494604697cf5644b33b2d1a1af8b29a70c3ddd4e88c",
         "role": "admin"
     },
-    "Anas": {
-        "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
-        "role": "student"
-    },
-    "Shazia": {
-        "password": "a320480f534776bddb5cdb54b1e93d210a3c7d199e80a23c1b2178497b184c76",
-        "role": "student"
-    },
-    "Roshan": {
-        "password": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e",
-        "role": "student"
-    },
     "Nas": {
         "password": "76b8008030b59de5f202c204cad322097306d701af90dab33ec2c8156f9c6ad1",
-        "role": "student"
-    },
-    "Jaga": {
-        "password": "7705896a194b00de32aee27445645d9ff440354d264f3860601c5a1580065dc2",
-        "role": "student"
-    },
-    "Rak": {
-        "password": "78205bfd40fb722bc866086fd66173d11a252b16955bd2406e2584b8c39fe40f",
-        "role": "student"
-    },
-    "Rag": {
-        "password": "5e0a7d1ddfcb2d0b508a5e29221deeb7c444e65db6b147bc0d8393388634667d",
-        "role": "student"
-    },
-    "Rad": {
-        "password": "989df1605cb23798a6cc16b56c42b4eb0a52ca0321570779ba16e6e20c3ce173",
-        "role": "student"
-    },
-    "Sammm": {
-        "password": "20f95868ce67683fd2fb22c7a04fc8e7a31b985c68a9d8466f450860fc20292f",
-        "role": "student"
-    },
-    "kevin": {
-        "password": "10a0b9abc337b69c9cab77253b36eb96491f2ad22df93863356e08f35fbe479b",
-        "role": "student"
-    },
-    "matheiw": {
-        "password": "bd3e7541673ace69f932e366261ddf0295e0278ad9d83c66b9553b43b74837f4",
-        "role": "student"
-    },
-    "Raj": {
-        "password": "80994a75705b9b46361a0def4c3b27c071dec6cbe11babeb20bc15e212c42acd",
         "role": "student"
     }
 }

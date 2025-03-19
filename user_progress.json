@@ -1,35 +1,3 @@
 {
-    "Nas": {
-        "Data Analyst": {},
-        "Data Analyst_Phase 3": {},
-        "Data Analyst_Phase 3_Machine Learning": {},
-        "Data Analyst_Phase 3_Machine Learning_Instance-Based Learning": {
-            "progress": 27,
-            "dates": [
-                "2025-03-26",
-                "2025-03-28"
-            ]
-        },
-        "Data Analyst_Phase 3_Machine Learning_Recommendation Systems": {
-            "progress": 100,
-            "dates": [
-                "2025-03-04"
-            ]
-        },
-        "Data Scientist": {},
-        "Data Scientist_Phase 3": {},
-        "Data Scientist_Phase 3_Machine Learning": {},
-        "Data Scientist_Phase 4": {},
-        "Data Scientist_Phase 4_NLP": {},
-        "Data Analyst_Phase 2": {},
-        "Data Analyst_Phase 2_Statistics": {},
-        "Data Analyst_Phase 2_Statistics_Inferential Statistics": {
-            "progress": 38,
-            "dates": [
-                "2025-03-27",
-                "2025-03-29",
-                "2025-04-10"
-            ]
-        }
-    }
+    
 }
